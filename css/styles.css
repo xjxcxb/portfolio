@@ -102,6 +102,7 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  
 }
 
 hr {
@@ -11503,6 +11504,7 @@ textarea.form-control-lg {
     text-align: center !important;
   }
 }
+
 @media (min-width: 1200px) {
   .fs-1 {
     font-size: 2.5rem !important;
@@ -11517,6 +11519,27 @@ textarea.form-control-lg {
     font-size: 1.5rem !important;
   }
 }
+.imgmag {
+  width: 300px;
+  height: 400px;
+  
+}
+.new-class {
+  justify-content: space-between;
+}
+.new-class2 {
+  justify-content: space-between;
+}
+
+/* CSS to enlarge the image */
+/* CSS to enlarge the image slightly */
+
+.imgfonts {
+  width: 300px;
+  height: 400px;
+ 
+}
+
 @media print {
   .d-print-inline {
     display: inline !important;
@@ -11555,15 +11578,16 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: #4fb0f6;
+  background: radial-gradient(circle at 48.7% 44.3%, rgb(30, 144, 231) 0%, rgb(56, 113, 209) 22.9%, rgb(38, 76, 140) 76.7%, rgb(31, 63, 116) 100.2%);
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  background: radial-gradient(circle at 10% 20%, rgb(7, 121, 222) 0%, rgb(20, 72, 140) 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 .rounded-4 {
   border-radius: 1rem !important;
