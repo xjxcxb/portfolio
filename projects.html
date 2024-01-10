@@ -21,9 +21,69 @@
     <link href="css/styles.css" rel="stylesheet" />
 
     <link href="css/lightbox.css" rel="stylesheet" />
+    <style>
+       
+
+        video#backgroundVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Place the video behind other elements */
+        }
+
+        /* Add some styling to ensure content is readable on top of the video */
+        main {
+            position: relative;
+            z-index: 1; /* Ensure content is on top of the video */
+        }
+
+        footer {
+            position: relative;
+            z-index: 1; /* Ensure content is on top of the video */
+        }
+        /* Add animation to the project cards */
+.card {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+/* Define a keyframe animation for the 'new-class' elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+video {
+            
+            object-fit: cover;
+           
+        }
+
+/* Apply the animation to the 'new-class' elements */
+.new-class {
+    animation: fadeInUp 2s ease-in-out;
+}
+
+    </style>
 </head>
 
 <body class="d-flex flex-column h-100 bg-light">
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="./assets/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <main class="flex-shrink-0">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
@@ -54,14 +114,15 @@
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
 
                         <!-- Project Card 1-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 new-class">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center new-class">
 
                                     <div class="p-5">
                                         <h2 class="fw-bolder">Magazine Design</h2>
-                                        <p>Did this 2D artwork in adobe illustrator.</p>
-                                        <p><i>Click on the image to see more</i></p>
+                                        <p>This Maldives article captivates with a stunning<br> large image setting the destination's tone. A 3-grid<br> layout ensures visual balance and organization, <br>enhancing readability.
+                                             Drop caps and colored <br>subtitles create hierarchy, guiding readers through<br> the article. Large titles and small images add visual <br>appeal, offering a glimpse of what's in store.</p>
+                                        <p><i><b>Click on the image to see more</b></i></p>
                                     </div>
                                     <div>
                                         <a href="./assets/magazine1.png" data-lightbox="image-1" data-title="Front">
@@ -76,18 +137,29 @@
                             </div>
                         </div>
                         <!-- Project Card 2-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 new-class">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center new-class2">
                                     <div class="p-5">
-                                        <h2 class="fw-bolder">Fonts Design</h2>
-                                        <p>Did this 2D artwork in adobe illustrator.</p>
-                                        <p><i>Click on the image to see more</i></p>
+                                        <h2 class="fw-bolder ">Website Design</h2>
+                                        <p>A visually captivivating website showcasing my<br>brand 'NATURAL PERFUME'. Using of Montserrat <br>font ensures comfortable reading while maintaining<br> professionalism. 
+                                            My logo, an elegant leaf, enhances<br> the natural essence. Blurred background images<br> focus on content and a centered perfume logo<br> capture attention.
+                                            </p>
+                                        <p><i><b>Click on the image to see more</b></i></p>
                                     </div>
 
                                     <div>
-                                        <a href="./assets/fonts.png" data-lightbox="image-1" data-title="Front">
+                                        <a href="./assets/fontsfull.png" data-lightbox="image-1" data-title="Homepage">
                                             <img class="imgfonts img-fluid" src="./assets/fonts.png" alt="..." />
+                                        </a>
+                                        <a href="./assets/aboutme.png" data-lightbox="image-1" data-title="About Me">
+
+                                        </a>
+                                        <a href="./assets/resume.png" data-lightbox="image-1" data-title="Resume">
+
+                                        </a>
+                                        <a href="./assets/portfolio.png" data-lightbox="image-1" data-title="Portfolio">
+
                                         </a>
                                     </div>
                                 </div>
@@ -95,13 +167,14 @@
                         </div>
 
                         <!-- Project Card 2-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 new-class">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center new-class2">
                                     <div class="p-5">
                                         <h2 class="fw-bolder">Green Day Poster Design</h2>
-                                        <p>Did this 2D artwork in adobe illustrator.</p>
-                                        <p><i>Click on the image to see more</i></p>
+                                        <p>This is a Green Day poster artwork. The design uses<br> a mix of formal and informal fonts to create a<br> welcoming yet more professional impression. The<br>  black and white picture,
+                                            along with the green <br>accents, emphasizes the band's rock/metal theme. <br>The balanced layout and use of colors enhance the <br>overall professional appearance of the artwork.</p>
+                                             <p><i><b>Click on the image to see more</b></i></p>
                                     </div>
 
                                     <div>
@@ -113,13 +186,13 @@
                             </div>
                         </div>
                           <!-- Project Card 3-->
-                          <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                          <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 new-class">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center new-class2">
                                     <div class="p-5">
                                         <h2 class="fw-bolder">Perfume Poster Design</h2>
                                         <p>Did this 2D artwork in adobe illustrator.</p>
-                                        <p><i>Click on the image to see more</i></p>
+                                        <p><i><b>Click on the image to see more</b></i></p>
                                     </div>
 
                                     <div>
@@ -130,29 +203,80 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Programming Section -->
-                        <div class="text-center mb-5">
-                            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Website</span>
-                            </h1>
-                        </div>
-                        <!-- Project Card 2-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                            <div class="card-body p-0">
-                                <div class="d-flex align-items-center new-class2">
-                                    <div class="p-5">
-                                        <h2 class="fw-bolder">xx</h2>
-                                        <p>xx</p>
-                                        <p><i>xx</i></p>
-                                    </div>
-
-                                    <div>
-                                        <a href="./assets/.png" data-lightbox="image-1" data-title="Front">
-                                            <img class="" src="" alt="..." />
-                                        </a>
+                               <!-- Project Card 3-->
+                               <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 new-class">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center new-class2">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder">Nutrition Poster Design</h2>
+                                            <p>The drinks are vegan, indicated by their green color<br> from ingredients like avocado. The '100% natural<br> product' logo underscores its natural composition.<br> The dominant
+                                                 green color signifies nature and health, <br>with added freshness from green leaves and dark blue<br> tones. Typography, especially the word 'Pure,' <br>conveys purity using a mix of formal and informal fonts.</p>
+                                            <p><i><b>Click on the image to see more</b></i></p>
+                                        </div>
+    
+                                        <div>
+                                            <a href="./assets/pure.png" data-lightbox="image-1" data-title="Front">
+                                                <img class="imgfonts img-fluid" src="./assets/pure.png" alt="..." />
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                        <!-- Programming Section -->
+                        <div class="text-center mb-5">
+                            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline ">Website/Prototype</span>
+                            </h1>
                         </div>
+
+                <!-- Project Card Next-->
+<div class="card overflow-hidden shadow rounded-4 border-0 mb-5" new-class>
+    <div class="card-body p-0">
+        <div class="d-flex align-items-center new-class2">
+            <div class="p-5">
+                <h2 class="fw-bolder">Movie Website </h2>
+                <p>This assignment involves creating a Movie Review web application using PHP, HTML, Bootstrap, CSS, and MySQL. The project includes features for user registration, login, displaying
+                     a list of movies, and managing movie reviews. Users can register, log in,
+                     view and search movies, as well as read and leave reviews. Advanced functionalities involve user account management, sorting movies, and restricting review editing and deletion to the
+                      original users.</p>
+                <p><i><b>Click on the video to enlarge</b></i></p>
+            </div>
+
+            <div>
+                <video width="320" height="450" controls>
+                    <source src="./assets/movie.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card overflow-hidden shadow rounded-4 border-0 mb-5 new-class">
+    <div class="card-body p-0">
+        <div class="d-flex align-items-center new-class2">
+            <div class="p-5">
+                <h2 class="fw-bolder">Portfolio App</h2>
+                <p>I created a portfolio app prototype using Adobe XD where creativity meets innovation.  I chose Arial and Montserrat fonts for readability and professionalism. . Design principles like contrast and emphasis guide the layout. 
+                    The theme is a calming sand color, and the color palette includes black, green, pink, blue, and white. 
+                    The logo combines a pen tool and paintbrush, symbolizing precision and creativity. Personas like May, a graphic designer, influenced the design to meet her goals and overcome challenges.</p>
+                <p><i><b>Click on the video to enlarge</b></i></p>
+            </div>
+
+            <div>
+                <video width="320" height="450  " controls>
+                    <source src="./assets/adobexd.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
                     </div>
 
                 </div>
@@ -182,14 +306,11 @@
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0">Copyright &copy; Your Website 2023</div>
+                    <div class="small m-0">Copyright &copy;  Jacob Tan's Portfolio 2023</div>
                 </div>
                 <div class="col-auto">
-                    <a class="small" href="#!">Privacy</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Terms</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Contact</a>
+               
+                    <a class="small" href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
