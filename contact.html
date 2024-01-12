@@ -134,29 +134,29 @@
                                 <!-- To make this form functional, sign up at-->
                                 <!-- https://startbootstrap.com/solution/contact-forms-->
                                
-                                <form action="contact.php" method="post" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <form action="#" id="contactForm" data-sb-form-api-token="API_TOKEN" onsubmit="return sendMail()">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" required />
                                         <label for="name">Full name</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                     </div>
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required/>
                                         <label for="email">Email address</label>
                                         <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                         <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" required/>
                                         <label for="phone">Phone number</label>
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"required></textarea>
                                         <label for="message">Message</label>
                                         <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                                     </div>
@@ -176,7 +176,8 @@
                                     <!-- an error submitting the form-->
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                    <button class="btn btn-primary btn-lg w-100" id="submitButton" type="submit" >Submit</button>
+
                                     
                                 </form>
                             </div>
@@ -204,26 +205,64 @@
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script>
-            emailjs.init("n9qQjAe1OYdExZVZ4");
         
-            function sendEmail() {
-                emailjs.sendForm("service_51v8lwr", "template_kws9vpd", "#contactForm")
+        <script type = "text/javascript">
+            (function(){
+                emailjs.init("n9qQjAe1OYdExZVZ4");
+            })();
+            function sendMail() {
+        // Check if the form is valid
+        if (!validateForm()) {
+            return false;
+        }
 
-                    .then(
-                        function (response) {
-                            console.log("Email sent successfully:", response);
-                            // Handle success, e.g., show a success message
-                            document.getElementById("contactForm").reset(); // Clear the form
-                        },
-                        function (error) {
-                            console.log("Failed to send email:", error);
-                            // Handle error, e.g., show an error message
-                        }
-                    );
-            }
+        var params = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value,
+        };
+
+        const serviceID = "service_51v8lwr";
+        const templateID = "template_kws9vpd";
+
+        emailjs.send(serviceID, templateID, params)
+            .then(
+                res => {
+                    document.getElementById("name").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("phone").value = "";
+                    document.getElementById("message").value = "";
+                    console.log(res);
+                    alert("Your message sent successfully");
+                }
+            )
+            .catch(err => console.log(err));
+
+        // Return false to prevent the form from submitting
+        return false;
+    }
+
+    function validateForm() {
+        // Perform your form validation here
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+
+        // Example validation (you can customize this according to your requirements)
+        if (name.trim() === "" || email.trim() === "" || phone.trim() === "" || message.trim() === "") {
+            alert("Please fill out all the fields in the form.");
+            return false;
+        }
+
+        return true;
+    }
+
+
+ 
         </script>
-        
+
+
     </body>
 </html>
